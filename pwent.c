@@ -12,6 +12,7 @@
 
 #define LINE_BUFFER_LENGTH  1000
 
+
 /*
  Return pointer to password entry for specified user.
  
@@ -20,6 +21,7 @@
  Note: The returned pointer points to static data.
  */
 mypwent *mygetpwnam(char *name) {
+	//printf("running mygetwpnanm\n");
 	FILE *file;
 	char buffer[LINE_BUFFER_LENGTH];
 
@@ -36,6 +38,8 @@ mypwent *mygetpwnam(char *name) {
 		if (sscanf(buffer, "%[^:]:%d:%[^:]:%[^:]:%d:%d", ent.pwname, &ent.uid,
 				ent.passwd, ent.passwd_salt, &ent.pwfailed, &ent.pwage) != 6)
 			break;
+		/* printf("Current buffer value: %s Compare names %s and %s, are equal: %s\n", buffer,pwname, name, strcmp(pwname, name) == 0 ? "true" : "false"); 
+		printf("lengths: %zu %zu", strlen(pwname), strlen(name));  */
 
 		if (strcmp(pwname, name) == 0) {
 			fclose(file);

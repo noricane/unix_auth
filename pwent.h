@@ -26,7 +26,7 @@
  similarity with the passwd database.  */
 
 /* Usage: copy the files to your own working directory, and
- use; #include "pwent.h"   to include it. */
+ use; #include "pwent.h"   tFo include it. */
 
 #ifndef PWENT_H
 #define PWENT_H
