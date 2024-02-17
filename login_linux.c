@@ -26,6 +26,8 @@ void sighandler() {
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);
 	signal(SIGTSTP, SIG_IGN);
+	signal(SIGTERM, SIG_IGN);
+	signal(SIGSTOP, SIG_IGN);
 	printf("Signal ignored \n");
 }
 void printLoginFail(){
